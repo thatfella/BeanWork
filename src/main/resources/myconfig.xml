@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util ">
+
+
+    <!--Ставлю классы в виде бинов. Пока только проверка четности-->
+    <bean  name="evenc" class="checkers.echecker"/>
+    <bean name="myfavc" class="checkers.fchecker"/>
+    <bean  name="caller" class="Launcher">
+        <property name="checkerList">
+            <list>
+                <ref bean="evenc"/>
+                <ref bean="myfavc"/>
+            </list>
+        </property>
+    </bean>
+</beans>
